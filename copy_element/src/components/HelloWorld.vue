@@ -8,7 +8,7 @@
             <button type="submit" formmethod="post">提交</button>
             <button type="reset">重置</button>
         </form>
-        <lx-button>组件按钮</lx-button>
+        <lx-button type="primary">组件按钮</lx-button>
     </div>
 </template>
 

@@ -34,9 +34,19 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '../../theme-chalk/common/var.scss';
 .lx-button {
-    padding: 12px;
+    padding: 12px 16px;
     font-size: 14px;
     border-radius: 4px;
+    border: 1px solid #ccc;
+    &:focus {
+        outline: none;
+    }
+}
+.lx-button-type-primary {
+    background: $--primary-color;
+    border-color: $--primary-color;
+    color: #fff;
 }
 </style>
