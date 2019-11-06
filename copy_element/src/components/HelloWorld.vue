@@ -9,6 +9,7 @@
             <button type="reset">重置</button>
         </form>
         <lx-button type="primary">组件按钮</lx-button>
+        <lx-button>测试按钮</lx-button>
     </div>
 </template>
 

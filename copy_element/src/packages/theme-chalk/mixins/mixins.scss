@@ -1,0 +1,14 @@
+@import "./config";
+
+
+/** BEM **/
+@mixin b($block) {
+    /**
+     * @description 所有组件的类名都使用统一的命名空间，
+     * 即以相同的字段作为类名的开始字段
+     */
+    $B: $namespace + '-' + $block !global;
+    .#{$B} {
+        @content
+    }
+}
