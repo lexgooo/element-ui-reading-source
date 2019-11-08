@@ -60,3 +60,13 @@
     - 支持属性值：`auto` | `text` | `none` | `contain` | `all` 
     - 这是个实验属性，浏览器支持还不是很好
 - sass 中 `&` 的意义：在编译后的 css 文件中，`&` 将被替换成嵌套外层的父选择器。
+- sass 中 `@at-root` 指令：作用是把该指令后的样式作用域提升到全局。
+- css 的 `pointer-events` 属性：如果该元素为 svg 元素，可用于指定 svg 的特定区域成为鼠标事件的 `target`， 如果值为 `none` ，当前元素对于鼠标事件就不会有任何反应。
+- `lx-button` 组件中默认的 `slot` 组件外包的 `span` 元素使用了 `v-if="$slots.default"` 语句的目的是当按钮的默认 `slots` 没有值的的时候，就不显示这个元素，以免样式受到影响，因为在样式中如果有图标也有 `slot` 内容的时候，这个 `span` 元素有一个 `5px` 的左边距。
+
+## 觉得源码中的可以改进的点 (v2.12.0)
+- `button` 的 `icon` 传入的完整的字体图标的类名，这意味着可以传入第三方的图标类，但是在样式中却没有针对第三图标的样式优化：把图标和文字间加一个 `5px` 的间隔。
+
+    > 涉及的源码文件及位置 :
+    >   1. packages/button/src/button.vue -> line 21
+    >   2. packages/theme-chalk/src/button.scss -> line 47 ~ line 51

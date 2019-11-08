@@ -1,15 +1,93 @@
 <template>
     <div class="hello">
-        <h1>{{ msg }}</h1>
-        <icon name="earth" />
-        <form id="form" action="/api/submit">
-            <input type="text" v-model="v1" />
-            <input type="text" v-model="v2" />
-            <button type="submit" formmethod="post">提交</button>
-            <button type="reset">重置</button>
-        </form>
-        <lx-button type="primary">组件按钮</lx-button>
-        <lx-button>测试按钮</lx-button>
+        <div class="icon">
+            <h1>图标</h1>
+            <icon name="delete-solid" />
+        </div>
+        <div class="button">
+            <h1>按钮</h1>
+            <div>
+                <lx-button @click="handleClick">默认按钮</lx-button>
+                <lx-button type="primary">主要按钮</lx-button>
+                <lx-button type="success">成功按钮</lx-button>
+                <lx-button type="info">信息按钮</lx-button>
+                <lx-button type="warning">警告按钮</lx-button>
+                <lx-button type="danger">危险按钮</lx-button>
+            </div>
+            <div>
+                <lx-button disabled>默认按钮</lx-button>
+                <lx-button type="primary" disabled>主要按钮</lx-button>
+                <lx-button type="success" disabled>成功按钮</lx-button>
+                <lx-button type="info" disabled>信息按钮</lx-button>
+                <lx-button type="warning" disabled>警告按钮</lx-button>
+                <lx-button type="danger" disabled>危险按钮</lx-button>
+            </div>
+            <div>
+                <lx-button plain>默认按钮</lx-button>
+                <lx-button type="primary" plain>主要按钮</lx-button>
+                <lx-button type="success" plain>成功按钮</lx-button>
+                <lx-button type="info" plain>信息按钮</lx-button>
+                <lx-button type="warning" plain>警告按钮</lx-button>
+                <lx-button type="danger" plain>危险按钮</lx-button>
+            </div>
+            <div>
+                <lx-button plain disabled>默认按钮</lx-button>
+                <lx-button type="primary" plain disabled>主要按钮</lx-button>
+                <lx-button type="success" plain disabled>成功按钮</lx-button>
+                <lx-button type="info" plain disabled>信息按钮</lx-button>
+                <lx-button type="warning" plain disabled>警告按钮</lx-button>
+                <lx-button type="danger" plain disabled>危险按钮</lx-button>
+            </div>
+            <div>
+                <lx-button round>默认按钮</lx-button>
+                <lx-button type="primary" round>主要按钮</lx-button>
+                <lx-button type="success" round>成功按钮</lx-button>
+                <lx-button type="info" round>信息按钮</lx-button>
+                <lx-button type="warning" round>警告按钮</lx-button>
+                <lx-button type="danger" round>危险按钮</lx-button>
+            </div>
+            <div>
+                <lx-button icon="lx-icon-search" circle></lx-button>
+                <lx-button type="primary" icon="lx-icon-edit" circle></lx-button>
+                <lx-button type="success" icon="lx-icon-check" circle></lx-button>
+                <lx-button type="info" icon="lx-icon-message" circle></lx-button>
+                <lx-button type="warning" icon="lx-icon-star-off" circle></lx-button>
+                <lx-button type="danger" icon="lx-icon-delete" circle></lx-button>
+            </div>
+            <div>
+                <lx-button round icon="lx-icon-edit">默认按钮</lx-button>
+                <lx-button round icon="iconfont icon-earth">三方图标</lx-button>
+                <lx-button type="primary" round loading>主要按钮</lx-button>
+                <lx-button type="success" round size="medium">中等按钮</lx-button>
+                <lx-button type="info" round size="small">较小按钮</lx-button>
+                <lx-button type="warning" round size="mini">最小按钮</lx-button>
+                <lx-button type="text">文本按钮</lx-button>
+                <lx-button type="text" disabled>文本按钮</lx-button>
+            </div>
+        </div>
+        <div class="button-group">
+            <h1>按钮组</h1>
+            <div>
+                <lx-button-group>
+                    <lx-button type="primary">按钮1</lx-button>
+                    <lx-button type="primary">按钮2</lx-button>
+                    <lx-button type="primary">按钮3</lx-button>
+                    <lx-button type="primary" loading>按钮4</lx-button>
+                    <lx-button type="primary" disabled>按钮5</lx-button>
+                    <lx-button type="primary" icon="lx-icon-delete">按钮6</lx-button>
+                </lx-button-group>
+            </div>
+            <div>
+                <lx-button-group>
+                    <lx-button type="primary" plain>按钮1</lx-button>
+                    <lx-button type="primary" plain>按钮2</lx-button>
+                    <lx-button type="primary" plain>按钮3</lx-button>
+                    <lx-button type="primary" loading plain>按钮4</lx-button>
+                    <lx-button type="primary" disabled plain>按钮5</lx-button>
+                    <lx-button type="primary" icon="lx-icon-delete" plain>按钮6</lx-button>
+                </lx-button-group>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -19,29 +97,19 @@ export default {
     props: {
         msg: String
     },
-    data() {
-        return {
-            v1: 1,
-            v2: 2
-        };
+    methods: {
+        handleClick() {
+            console.log('默认按钮点击事件')
+        }
     }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-    margin: 40px 0 0;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-a {
-    color: #42b983;
+<style lang="scss" scoped>
+.button, .button-group {
+    div + div {
+        margin-top: 15px;
+    }
 }
 </style>
