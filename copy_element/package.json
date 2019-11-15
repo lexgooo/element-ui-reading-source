@@ -33,12 +33,12 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "@vue/prettier"
+      "plugin:vue/essential"
     ],
     "rules": {
       "no-console": 1,
-      "no-debugger": 1
+      "no-debugger": 1,
+      "vue/no-side-effects-in-computed-properties": 1
     },
     "parserOptions": {
       "parser": "babel-eslint"
