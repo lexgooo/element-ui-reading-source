@@ -8,7 +8,14 @@ export default {
     name: 'LxRadioGroup',
     componentName: 'LxRadioGroup',
     props: {
-        value: {}
+        value: {},
+        disabled: Boolean,
+        size: String
+    },
+    computed: {
+        radioGroupSize () {
+            return this.size
+        }
     }
 }
 </script>
